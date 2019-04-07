@@ -1,4 +1,4 @@
-##CINTAINERIZED ML APP
+# CONTAINERIZED ML APP
 
 The above app will only work on Linux based systems
 

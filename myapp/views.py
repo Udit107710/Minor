@@ -6,30 +6,7 @@ from sklearn import datasets
 from .models import Results
 from .forms import PredictForm
 import os
-#from django.views.generic import TemplateViews
 
-
-'''
-def predict(request,petal_length, petal_width, sepal_length, sepal_width):
-	try:
-		##CONVERSION
-		petal_length = float (petal_length)
-		petal_width = float (petal_width)
-		sepal_length = float (sepal_length)
-		sepal_width = float (sepal_width)
-
-		iris = datasets.load_iris()
-		target = iris.target_names
-		
-		val = np.array([petal_length, petal_width, sepal_length, sepal_width])
-		model = joblib.load('iris_svm_model.pkl')
-		y_pred = model.predict(val.reshape(1,-1))
-		prediction = target[y_pred[0]]
-		result = Results(petal_length= petal_length, petal_width= petal_width, sepal_length= sepal_length, sepal_width= sepal_width, prediction= prediction)
-		result.save()
-	except Exception as e:
-		return(e)  
-'''
 dir_path = os.path.dirname(os.path.realpath(__file__))
 file_name = dir_path + "/iris_svm_model.pkl"
 

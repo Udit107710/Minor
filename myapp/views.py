@@ -24,7 +24,7 @@ def predict(requests):
 			target = iris.target_names
 
 			val = np.array([petal_length, petal_width,sepal_length,sepal_width])
-			model = joblib.load(file_path)
+			model = joblib.load(file_name)
 			y_pred = model.predict(val.reshape(1,-1))
 			prediction = target[y_pred[0]]
 			#result = Results(petal_length= petal_length, petal_width=petal_width, sepal_length=sepal_length, sepal_width-sepal_width, prediction=prediction)

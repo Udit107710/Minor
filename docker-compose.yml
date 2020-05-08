@@ -1,8 +1,6 @@
 version: '2.2'
 
 services:
-        db:
-                image: postgres
         webapp:
                 build: .
                 command: python manage.py runserver 0.0.0.0:8080
@@ -10,17 +8,3 @@ services:
                 - .:/app
                 ports: 
                 - "127.0.0.1:8080:8080"
-                links:
-                - db
-                depends_on: 
-                - migration
-                - db
-        migration:
-                build: .
-                command: python manage.py migrate
-                volumes:
-                - .:/app
-                links:
-                - db
-                depends_on:
-                - db
